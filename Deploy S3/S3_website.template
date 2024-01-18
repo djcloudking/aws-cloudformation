@@ -1,0 +1,43 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "AWS CloudFormation Sample Template S3_Website_Bucket_With_Retain_On_Delete: Sample template showing how to create a publicly accessible S3 bucket configured for website access.",
+
+  "Resources" : {
+    "S3Bucket" : {
+      "Type" : "AWS::S3::Bucket",
+      "Properties" : {
+        "AccessControl" : "PublicRead",
+        "WebsiteConfiguration" : {
+          "IndexDocument" : "index.html",
+          "ErrorDocument" : "error.html"      
+         }
+      },
+    },
+    "mybucketpolicy" : {
+      "Type" : "AWS::S3::BucketPolicy",
+      "Properties" : {
+         "PolicyDocument" : {
+            "Version":"2012-10-17",
+            "Statement":[{
+	       "Sid":"PublicReadGetObject",
+               "Effect":"Allow",
+	       "Principal": "*",
+               "Action":["s3:GetObject"],
+               "Resource" : { "Fn::Join" : [ 
+               "", [ "arn:aws:s3:::", { "Ref" : "S3Bucket" } , "/*" ]
+               ] }
+             }]
+         },
+        "Bucket" : { "Ref" : "S3Bucket" }
+      }
+    }
+   },
+
+  "Outputs" : {
+    "WebsiteURL" : {
+      "Value" : { "Fn::GetAtt" : [ "S3Bucket", "WebsiteURL" ] },
+      "Description" : "URL for website hosted on S3"
+    }
+  } 
+}
