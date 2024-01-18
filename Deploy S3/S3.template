@@ -1,0 +1,25 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "This is a Sample template showing how to create a publicly accessible S3 bucket configured for website access without a specific deletion policy.",
+
+  "Resources" : {
+    "S3Bucket" : {
+      "Type" : "AWS::S3::Bucket",
+      "Properties" : {
+        "AccessControl" : "PublicRead",
+        "WebsiteConfiguration" : {
+          "IndexDocument" : "index.html",
+          "ErrorDocument" : "error.html"      
+         }
+      },
+    }
+  },
+
+  "Outputs" : {
+    "WebsiteURL" : {
+      "Value" : { "Fn::GetAtt" : [ "S3Bucket", "WebsiteURL" ] },
+      "Description" : "URL for website hosted on S3"
+    }
+  } 
+}
