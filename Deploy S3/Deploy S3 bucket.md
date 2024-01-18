@@ -1,0 +1,1 @@
+# Using CloudFormation deploy a simple S3 bucket
