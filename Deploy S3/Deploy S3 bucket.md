@@ -1,20 +1,21 @@
 # Using CloudFormation to Deploy a simple S3 bucket
 
- In this tutorial, we will be deploying a simple AWS S3 bucket using the previously discussed CloudFormation template. 
+ In this short tutorial, I will be deploying a simple AWS S3 bucket using a CloudFormation template. 
  
- Background
+ ### Background
  
  
  
- Prerequisites
+### Prerequisites
  
- Let’s have fun!
+### Let’s have fun!
 
- Step 1: Prepare the CloudFormation Template
+#### Step 1: Prepare the CloudFormation Template
  
  - Create a JSON or YAML file 
  
- 
+Cheat Sheet: See the attached file S3.template for a cloudformation template
+
  To follow along, first log into your AWS account. Next get to the CloudFormation servers. I click on create stack. Here it gives me three options. I can use a template that is ready or use a sample or create a new template using the designer. Since our template is ready, I will select template is ready. Next, we have to specify where the template is. Since I have the exercise file downloaded, I will click on the choose file. I will browse to the 0303 folder. Click begin and select the template file. I click next. It asks me for a stack name. This is the unique name given to every CloudFormation stack. I'm going to use the simple name demo and click next. Now it gives us some additional options. First is the ability to specify some tags. These tags are not only attached to the stack but all the resources that get created in the stack. Just to demonstrate this, I will create a stack with a tag purpose and value demo. There are some other advanced features that are rarely used, so I will not use them in this demo. You can also have them as default. When we click next, we get to review everything. Notice your template which is a local file has been uploaded to S3. The description has actually been loaded from the stack itself. You can also review what the stack is going to cost you, if you like. There are other options specified or left as default. We click on create stack. When we click create, it brings us back to the CloudFormation console. Since the demo stack is selected, we can review its details. For example, let's look at the stack info. Here you can find the unique stack ID that is assigned to every CloudFormation stack. We can even review the template itself that was used to create the stack. We can also review the events that took place in creation of the stack, which here you can see include the creation of an S3 bucket. Not just the events, we can also review what resources were created, and most importantly, the outputs of the stack. Now the demo stack creation has been completed, let's go under the S3 service and confirm that a new S3 bucket has been created. You can see that a new bucket now exists with the name demo S3 bucket. This confirms that our stack was created successfully.
 
 
