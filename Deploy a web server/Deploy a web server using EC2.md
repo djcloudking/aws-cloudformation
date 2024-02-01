@@ -37,6 +37,12 @@ You need an AWS account. Set up a Free-Tier account www.aws.amazon.com/free.
 
 - Leave everything as default and click next. 
 
-- Under the options sections, 
+- Under the options sections, click create stack. 
 
-. And then click create stack. While the stack is being created, let us review the events. Before the instance can be created, the security group has to be created. And that is why you are seeing that the security group creation is complete. Now the web server itself is being created. I'll continue to refresh to see any updates. And now, the web server creation has been completed and the stack has moved to a create complete state. We can now check under resources to confirm that both the web server and the security group have been completed. And lastly, we can review the output. We will open the website URL in a new tab. This can sometimes happen because the web server takes a few seconds to boot up and start running. Let's give it a few seconds and try again. And you can see that our web server is now up and running.
+- Go back to the created stack and review the events. 
+
+- Double check if the security group creation is complete, then the webserver itself. 
+
+- Refresh and now ypou should see that the web server creation has been completed and the stack has moved to a create complete state. 
+
+- Go to the output,open the website URL in a new tab. Now you can see that our web server is now up and running. If not,  give it a few seconds and try again. 
