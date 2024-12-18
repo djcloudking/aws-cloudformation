@@ -36,4 +36,4 @@ Resources:
   MyS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: my-unique-bucket-name-4rw3dda34  # Ensure this is globally unique
+      BucketName: my-unique-bucket-name-dj-1984  # Ensure this is globally unique
